@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "TrustFix.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/TrustFix.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TrustFix.Core.dll": {}
+        }
+      },
+      "TrustFix.Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "TrustFix.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TrustFix.Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TrustFix.Engine.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "TrustFix.Core/1.0.0": {
+      "type": "project",
+      "path": "../TrustFix.Core/TrustFix.Core.csproj",
+      "msbuildProject": "../TrustFix.Core/TrustFix.Core.csproj"
+    },
+    "TrustFix.Engine/1.0.0": {
+      "type": "project",
+      "path": "../TrustFix.Engine/TrustFix.Engine.csproj",
+      "msbuildProject": "../TrustFix.Engine/TrustFix.Engine.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "TrustFix.Engine >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/Users/ionutsandu96/.nuget/packages/": {}
@@ -32,7 +69,11 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Engine/TrustFix.Engine.csproj": {
+              "projectPath": "/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Engine/TrustFix.Engine.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

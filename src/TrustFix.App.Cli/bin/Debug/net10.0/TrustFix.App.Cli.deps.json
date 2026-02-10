@@ -7,14 +7,81 @@
   "targets": {
     ".NETCoreApp,Version=v10.0": {
       "TrustFix.App.Cli/1.0.0": {
+        "dependencies": {
+          "TrustFix.Collectors.Mock": "1.0.0",
+          "TrustFix.Core": "1.0.0",
+          "TrustFix.Engine": "1.0.0",
+          "TrustFix.Reporting": "1.0.0"
+        },
         "runtime": {
           "TrustFix.App.Cli.dll": {}
+        }
+      },
+      "TrustFix.Collectors.Mock/1.0.0": {
+        "dependencies": {
+          "TrustFix.Core": "1.0.0"
+        },
+        "runtime": {
+          "TrustFix.Collectors.Mock.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "TrustFix.Core/1.0.0": {
+        "runtime": {
+          "TrustFix.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "TrustFix.Engine/1.0.0": {
+        "dependencies": {
+          "TrustFix.Core": "1.0.0"
+        },
+        "runtime": {
+          "TrustFix.Engine.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "TrustFix.Reporting/1.0.0": {
+        "dependencies": {
+          "TrustFix.Engine": "1.0.0"
+        },
+        "runtime": {
+          "TrustFix.Reporting.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
   },
   "libraries": {
     "TrustFix.App.Cli/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TrustFix.Collectors.Mock/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TrustFix.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TrustFix.Engine/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TrustFix.Reporting/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

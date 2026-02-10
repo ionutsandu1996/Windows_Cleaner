@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrustFix.Engine")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ce0e01c21822dd5d3c69bd5dfa246da0a6019b0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b09819dcf5a5ca353db5936c687da5a3feac9753")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrustFix.Engine")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrustFix.Engine")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

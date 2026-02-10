@@ -10,3 +10,7 @@
 /Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Engine/obj/Debug/net10.0/refint/TrustFix.Engine.dll
 /Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Engine/obj/Debug/net10.0/TrustFix.Engine.pdb
 /Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Engine/obj/Debug/net10.0/ref/TrustFix.Engine.dll
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Engine/bin/Debug/net10.0/TrustFix.Core.dll
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Engine/bin/Debug/net10.0/TrustFix.Core.pdb
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Engine/obj/Debug/net10.0/TrustFix.Engine.csproj.AssemblyReference.cache
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Engine/obj/Debug/net10.0/TrustFix.C59E0E00.Up2Date

@@ -7,14 +7,30 @@
   "targets": {
     ".NETCoreApp,Version=v10.0": {
       "TrustFix.Collectors.Mock/1.0.0": {
+        "dependencies": {
+          "TrustFix.Core": "1.0.0"
+        },
         "runtime": {
           "TrustFix.Collectors.Mock.dll": {}
+        }
+      },
+      "TrustFix.Core/1.0.0": {
+        "runtime": {
+          "TrustFix.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
   },
   "libraries": {
     "TrustFix.Collectors.Mock/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TrustFix.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

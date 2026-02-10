@@ -1,11 +1,87 @@
 {
   "version": 3,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "TrustFix.Collectors.Mock/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "TrustFix.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TrustFix.Collectors.Mock.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TrustFix.Collectors.Mock.dll": {}
+        }
+      },
+      "TrustFix.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/TrustFix.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TrustFix.Core.dll": {}
+        }
+      },
+      "TrustFix.Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "TrustFix.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TrustFix.Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TrustFix.Engine.dll": {}
+        }
+      },
+      "TrustFix.Reporting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "TrustFix.Engine": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TrustFix.Reporting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TrustFix.Reporting.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "TrustFix.Collectors.Mock/1.0.0": {
+      "type": "project",
+      "path": "../TrustFix.Collectors.Mock/TrustFix.Collectors.Mock.csproj",
+      "msbuildProject": "../TrustFix.Collectors.Mock/TrustFix.Collectors.Mock.csproj"
+    },
+    "TrustFix.Core/1.0.0": {
+      "type": "project",
+      "path": "../TrustFix.Core/TrustFix.Core.csproj",
+      "msbuildProject": "../TrustFix.Core/TrustFix.Core.csproj"
+    },
+    "TrustFix.Engine/1.0.0": {
+      "type": "project",
+      "path": "../TrustFix.Engine/TrustFix.Engine.csproj",
+      "msbuildProject": "../TrustFix.Engine/TrustFix.Engine.csproj"
+    },
+    "TrustFix.Reporting/1.0.0": {
+      "type": "project",
+      "path": "../TrustFix.Reporting/TrustFix.Reporting.csproj",
+      "msbuildProject": "../TrustFix.Reporting/TrustFix.Reporting.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "TrustFix.Collectors.Mock >= 1.0.0",
+      "TrustFix.Core >= 1.0.0",
+      "TrustFix.Engine >= 1.0.0",
+      "TrustFix.Reporting >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/Users/ionutsandu96/.nuget/packages/": {}
@@ -32,7 +108,20 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/TrustFix.Collectors.Mock.csproj": {
+              "projectPath": "/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/TrustFix.Collectors.Mock.csproj"
+            },
+            "/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Core/TrustFix.Core.csproj": {
+              "projectPath": "/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Core/TrustFix.Core.csproj"
+            },
+            "/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Engine/TrustFix.Engine.csproj": {
+              "projectPath": "/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Engine/TrustFix.Engine.csproj"
+            },
+            "/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Reporting/TrustFix.Reporting.csproj": {
+              "projectPath": "/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Reporting/TrustFix.Reporting.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

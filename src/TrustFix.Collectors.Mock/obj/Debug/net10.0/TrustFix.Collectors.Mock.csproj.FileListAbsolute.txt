@@ -10,3 +10,7 @@
 /Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/obj/Debug/net10.0/refint/TrustFix.Collectors.Mock.dll
 /Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/obj/Debug/net10.0/TrustFix.Collectors.Mock.pdb
 /Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/obj/Debug/net10.0/ref/TrustFix.Collectors.Mock.dll
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/bin/Debug/net10.0/TrustFix.Core.dll
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/bin/Debug/net10.0/TrustFix.Core.pdb
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/obj/Debug/net10.0/TrustFix.Collectors.Mock.csproj.AssemblyReference.cache
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/obj/Debug/net10.0/TrustFix.37652A95.Up2Date
