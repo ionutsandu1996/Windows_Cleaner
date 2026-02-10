@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TrustFix.App.Cli/TrustFix.App.Cli.csproj" />
+    <Project Path="src/TrustFix.Collectors.Mock/TrustFix.Collectors.Mock.csproj" />
+    <Project Path="src/TrustFix.Core/TrustFix.Core.csproj" />
+    <Project Path="src/TrustFix.Engine/TrustFix.Engine.csproj" />
+    <Project Path="src/TrustFix.Reporting/TrustFix.Reporting.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TrustFix.Engine.Tests/TrustFix.Engine.Tests.csproj" />
+  </Folder>
+</Solution>

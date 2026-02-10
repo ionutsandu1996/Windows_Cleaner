@@ -1,0 +1,15 @@
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.App.Cli/bin/Debug/net10.0/TrustFix.App.Cli
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.App.Cli/bin/Debug/net10.0/TrustFix.App.Cli.deps.json
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.App.Cli/bin/Debug/net10.0/TrustFix.App.Cli.runtimeconfig.json
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.App.Cli/bin/Debug/net10.0/TrustFix.App.Cli.dll
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.App.Cli/bin/Debug/net10.0/TrustFix.App.Cli.pdb
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.App.Cli/obj/Debug/net10.0/TrustFix.App.Cli.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.App.Cli/obj/Debug/net10.0/TrustFix.App.Cli.AssemblyInfoInputs.cache
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.App.Cli/obj/Debug/net10.0/TrustFix.App.Cli.AssemblyInfo.cs
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.App.Cli/obj/Debug/net10.0/TrustFix.App.Cli.csproj.CoreCompileInputs.cache
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.App.Cli/obj/Debug/net10.0/TrustFix.App.Cli.sourcelink.json
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.App.Cli/obj/Debug/net10.0/TrustFix.App.Cli.dll
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.App.Cli/obj/Debug/net10.0/refint/TrustFix.App.Cli.dll
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.App.Cli/obj/Debug/net10.0/TrustFix.App.Cli.pdb
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.App.Cli/obj/Debug/net10.0/TrustFix.App.Cli.genruntimeconfig.cache
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.App.Cli/obj/Debug/net10.0/ref/TrustFix.App.Cli.dll

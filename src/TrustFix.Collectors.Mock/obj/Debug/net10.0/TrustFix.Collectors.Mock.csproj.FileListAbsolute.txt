@@ -1,0 +1,12 @@
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/bin/Debug/net10.0/TrustFix.Collectors.Mock.deps.json
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/bin/Debug/net10.0/TrustFix.Collectors.Mock.dll
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/bin/Debug/net10.0/TrustFix.Collectors.Mock.pdb
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/obj/Debug/net10.0/TrustFix.Collectors.Mock.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/obj/Debug/net10.0/TrustFix.Collectors.Mock.AssemblyInfoInputs.cache
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/obj/Debug/net10.0/TrustFix.Collectors.Mock.AssemblyInfo.cs
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/obj/Debug/net10.0/TrustFix.Collectors.Mock.csproj.CoreCompileInputs.cache
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/obj/Debug/net10.0/TrustFix.Collectors.Mock.sourcelink.json
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/obj/Debug/net10.0/TrustFix.Collectors.Mock.dll
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/obj/Debug/net10.0/refint/TrustFix.Collectors.Mock.dll
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/obj/Debug/net10.0/TrustFix.Collectors.Mock.pdb
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Collectors.Mock/obj/Debug/net10.0/ref/TrustFix.Collectors.Mock.dll

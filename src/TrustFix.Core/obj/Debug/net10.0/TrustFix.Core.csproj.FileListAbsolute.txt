@@ -1,0 +1,12 @@
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Core/bin/Debug/net10.0/TrustFix.Core.deps.json
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Core/bin/Debug/net10.0/TrustFix.Core.dll
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Core/bin/Debug/net10.0/TrustFix.Core.pdb
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Core/obj/Debug/net10.0/TrustFix.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Core/obj/Debug/net10.0/TrustFix.Core.AssemblyInfoInputs.cache
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Core/obj/Debug/net10.0/TrustFix.Core.AssemblyInfo.cs
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Core/obj/Debug/net10.0/TrustFix.Core.csproj.CoreCompileInputs.cache
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Core/obj/Debug/net10.0/TrustFix.Core.sourcelink.json
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Core/obj/Debug/net10.0/TrustFix.Core.dll
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Core/obj/Debug/net10.0/refint/TrustFix.Core.dll
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Core/obj/Debug/net10.0/TrustFix.Core.pdb
+/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Core/obj/Debug/net10.0/ref/TrustFix.Core.dll
