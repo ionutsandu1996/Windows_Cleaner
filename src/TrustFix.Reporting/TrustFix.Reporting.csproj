@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TrustFix.Engine\TrustFix.Engine.csproj" />
+    <ProjectReference Include="..\TrustFix.Core\TrustFix.Core.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

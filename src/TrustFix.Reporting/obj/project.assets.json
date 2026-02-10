@@ -41,6 +41,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "TrustFix.Core >= 1.0.0",
       "TrustFix.Engine >= 1.0.0"
     ]
   },
@@ -70,6 +71,9 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
+            "/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Core/TrustFix.Core.csproj": {
+              "projectPath": "/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Core/TrustFix.Core.csproj"
+            },
             "/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Engine/TrustFix.Engine.csproj": {
               "projectPath": "/Users/ionutsandu96/Work/GIT/Windows_Cleaner/src/TrustFix.Engine/TrustFix.Engine.csproj"
             }

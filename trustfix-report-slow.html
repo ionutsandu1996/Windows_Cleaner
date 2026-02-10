@@ -56,54 +56,13 @@ h3 { margin:0 0 6px 0; }
 .overall {
   border-left:12px solid #ccc;
 }
-.overall.good {
-  border-left-color:#27ae60;
-  background:#f3fbf6;
-}
-.overall.ok {
-  border-left-color:#f1c40f;
-  background:#fffaf0;
-}
-.overall.bad {
-  border-left-color:#e74c3c;
-  background:#fff4f4;
-}
+.overall.good { border-left-color:#27ae60; background:#f3fbf6; }
+.overall.ok   { border-left-color:#f1c40f; background:#fffaf0; }
+.overall.bad  { border-left-color:#e74c3c; background:#fff4f4; }
 
 .overall-title {
   font-size:22px;
   font-weight:800;
-}
-
-.kpi-row {
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:10px;
-}
-
-.kpi {
-  background: rgba(255,255,255,0.7);
-  border: 1px solid rgba(0,0,0,0.06);
-  border-radius: 12px;
-  padding: 12px 14px;
-  min-width: 220px;
-}
-
-.kpi .kpi-label {
-  color:#666;
-  font-size:13px;
-}
-
-.kpi .kpi-value {
-  margin-top:6px;
-  font-weight:900;
-  font-size:18px;
-}
-
-.kpi .kpi-sub {
-  margin-top:4px;
-  color:#666;
-  font-size:12px;
 }
 
 .pill {
@@ -118,6 +77,25 @@ h3 { margin:0 0 6px 0; }
 .pill.good { background:#dff3e6; }
 .pill.ok   { background:#fff2c2; }
 .pill.bad  { background:#ffd6d6; }
+
+.kpi-row {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:10px;
+}
+
+.kpi {
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 12px;
+  padding: 12px 14px;
+  min-width: 240px;
+}
+
+.kpi-label { color:#666; font-size:13px; }
+.kpi-value { margin-top:6px; font-weight:900; font-size:18px; }
+.kpi-sub { margin-top:4px; color:#666; font-size:12px; }
 
 .scores {
   display:flex;
@@ -175,7 +153,7 @@ h3 { margin:0 0 6px 0; }
 
 <div class="card">
   <h1>TrustFix – System Health Report</h1>
-  <div class="meta">Generated at: 10.02.2026 17:05:34</div>
+  <div class="meta">Generated at: 10.02.2026 17:13:58</div>
 </div>
 
 <div class="actionbar">
@@ -192,14 +170,14 @@ h3 { margin:0 0 6px 0; }
   <div class="kpi-row">
     <div class="kpi">
       <div class="kpi-label">Estimated improvement (Performance)</div>
-      <div class="kpi-value">+35 points</div>
-      <div class="kpi-sub">Estimated Performance after fixes: <b>95/100</b></div>
+      <div class="kpi-value">+34 points</div>
+      <div class="kpi-sub">Estimated Performance after fixes: <b>94/100</b></div>
     </div>
 
     <div class="kpi">
-      <div class="kpi-label">Issues detected</div>
-      <div class="kpi-value">2</div>
-      <div class="kpi-sub">Focus on critical/high-impact items first.</div>
+      <div class="kpi-label">Snapshot highlights</div>
+      <div class="kpi-value">7,8% disk free • 18 startup apps</div>
+      <div class="kpi-sub">RAM used: <b>82,5%</b></div>
     </div>
   </div>
 </div>
@@ -224,7 +202,7 @@ h3 { margin:0 0 6px 0; }
 
 <div class="card" id="recommended-actions">
 <h2>Recommended actions</h2>
-<p class="meta">Estimated improvement if you apply the recommendations: <b>+35 Performance</b> (to approx. <b>95/100</b>).</p>
+<p class="meta">Estimated improvement if you apply the recommendations: <b>+34 Performance</b> (to approx. <b>94/100</b>).</p>
 <ol>
 
 <li><b>Low disk space on system drive</b><br/>Run Safe Cleanup (temp/cache/recycle bin) and move large files off the system drive.</li>

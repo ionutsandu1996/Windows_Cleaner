@@ -25,7 +25,8 @@ foreach (var f in report.Findings)
     Console.WriteLine();
 }
 
-var html = HtmlReportGenerator.Generate(report);
+var html = HtmlReportGenerator.Generate(report, snapshot);
+
 
 var outputPath = Path.Combine(
     Directory.GetCurrentDirectory(),

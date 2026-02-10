@@ -49,6 +49,7 @@
       },
       "TrustFix.Reporting/1.0.0": {
         "dependencies": {
+          "TrustFix.Core": "1.0.0",
           "TrustFix.Engine": "1.0.0"
         },
         "runtime": {

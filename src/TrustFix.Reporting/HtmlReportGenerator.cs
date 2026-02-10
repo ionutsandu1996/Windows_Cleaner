@@ -1,12 +1,13 @@
 using System.Net;
 using System.Text;
+using TrustFix.Core.Domain;
 using TrustFix.Engine;
 
 namespace TrustFix.Reporting;
 
 public static class HtmlReportGenerator
 {
-    public static string Generate(EvaluationReport report)
+    public static string Generate(EvaluationReport report, RawSnapshot snapshot)
     {
         static string H(string s) => WebUtility.HtmlEncode(s);
 
@@ -49,43 +50,44 @@ public static class HtmlReportGenerator
             };
         }
 
-        // Heuristic v1: estimate how many "Performance points" the user could gain if they fix issues.
-        static int ImprovementPointsFor(string findingId, string severityLower)
+        // --- VALUE-BASED ESTIMATED IMPROVEMENT (v1 heuristic)
+        // Returns estimated performance points gained if user applies recommended fixes.
+        static int EstimateImprovement(RawSnapshot s)
         {
-            var basePts = findingId switch
+            var gain = 0;
+
+            // Disk free: biggest “feel” improvement when very low.
+            // If < 5% => +25, 5–10% => +20, 10–15% => +12, 15–20% => +6, >=20% => +0
+            if (s.DiskFreePercent < 5) gain += 25;
+            else if (s.DiskFreePercent < 10) gain += 20;
+            else if (s.DiskFreePercent < 15) gain += 12;
+            else if (s.DiskFreePercent < 20) gain += 6;
+
+            // Startup apps: baseline “healthy” is ~8-10.
+            // Every app above 10 adds a little gain, capped.
+            if (s.StartupAppCount > 10)
             {
-                "storage.low_free_space" => 20,
-                "startup.too_many_apps" => 10,
-                "memory.high_usage" => 15,
-                _ => 3
-            };
+                var extra = s.StartupAppCount - 10;         // e.g. 18 => 8
+                gain += Math.Min(14, extra * 2);            // 8*2=16 => cap 14
+            }
 
-            // Slight bonus for critical issues (they tend to hurt more).
-            if (severityLower == "critical") basePts += 5;
+            // RAM used: if >85% the system tends to stutter.
+            // 85–90 => +6, 90–95 => +12, >95 => +18
+            if (s.RamUsedPercent > 95) gain += 18;
+            else if (s.RamUsedPercent > 90) gain += 12;
+            else if (s.RamUsedPercent > 85) gain += 6;
 
-            return basePts;
+            // Keep it believable for MVP
+            return Math.Min(gain, 40);
         }
 
-        // --- Overall = worst of the three scores
         var worstScore = Math.Min(
             report.Scores.Performance,
             Math.Min(report.Scores.Stability, report.Scores.Security)
         );
         var overallClass = ScoreClass(worstScore);
 
-        // --- Estimated improvement (performance)
-        var improvement = 0;
-        var seenIds = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        foreach (var f in report.Findings ?? [])
-        {
-            // If you ever generate duplicate IDs, we don't want to inflate the estimate.
-            if (!seenIds.Add(f.Id)) continue;
-
-            var sevLower = f.Severity.ToString().ToLowerInvariant();
-            improvement += ImprovementPointsFor(f.Id, sevLower);
-        }
-        improvement = Math.Min(improvement, 35); // cap to keep it believable for MVP
-
+        var improvement = EstimateImprovement(snapshot);
         var estimatedPerfAfter = Math.Min(100, report.Scores.Performance + improvement);
 
         var sb = new StringBuilder();
@@ -148,54 +150,13 @@ h3 {{ margin:0 0 6px 0; }}
 .overall {{
   border-left:12px solid #ccc;
 }}
-.overall.good {{
-  border-left-color:#27ae60;
-  background:#f3fbf6;
-}}
-.overall.ok {{
-  border-left-color:#f1c40f;
-  background:#fffaf0;
-}}
-.overall.bad {{
-  border-left-color:#e74c3c;
-  background:#fff4f4;
-}}
+.overall.good {{ border-left-color:#27ae60; background:#f3fbf6; }}
+.overall.ok   {{ border-left-color:#f1c40f; background:#fffaf0; }}
+.overall.bad  {{ border-left-color:#e74c3c; background:#fff4f4; }}
 
 .overall-title {{
   font-size:22px;
   font-weight:800;
-}}
-
-.kpi-row {{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:10px;
-}}
-
-.kpi {{
-  background: rgba(255,255,255,0.7);
-  border: 1px solid rgba(0,0,0,0.06);
-  border-radius: 12px;
-  padding: 12px 14px;
-  min-width: 220px;
-}}
-
-.kpi .kpi-label {{
-  color:#666;
-  font-size:13px;
-}}
-
-.kpi .kpi-value {{
-  margin-top:6px;
-  font-weight:900;
-  font-size:18px;
-}}
-
-.kpi .kpi-sub {{
-  margin-top:4px;
-  color:#666;
-  font-size:12px;
 }}
 
 .pill {{
@@ -210,6 +171,25 @@ h3 {{ margin:0 0 6px 0; }}
 .pill.good {{ background:#dff3e6; }}
 .pill.ok   {{ background:#fff2c2; }}
 .pill.bad  {{ background:#ffd6d6; }}
+
+.kpi-row {{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:10px;
+}}
+
+.kpi {{
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 12px;
+  padding: 12px 14px;
+  min-width: 240px;
+}}
+
+.kpi-label {{ color:#666; font-size:13px; }}
+.kpi-value {{ margin-top:6px; font-weight:900; font-size:18px; }}
+.kpi-sub {{ margin-top:4px; color:#666; font-size:12px; }}
 
 .scores {{
   display:flex;
@@ -289,9 +269,9 @@ h3 {{ margin:0 0 6px 0; }}
     </div>
 
     <div class=""kpi"">
-      <div class=""kpi-label"">Issues detected</div>
-      <div class=""kpi-value"">{(report.Findings?.Count ?? 0)}</div>
-      <div class=""kpi-sub"">Focus on critical/high-impact items first.</div>
+      <div class=""kpi-label"">Snapshot highlights</div>
+      <div class=""kpi-value"">{snapshot.DiskFreePercent:0.0}% disk free • {snapshot.StartupAppCount} startup apps</div>
+      <div class=""kpi-sub"">RAM used: <b>{snapshot.RamUsedPercent:0.0}%</b></div>
     </div>
   </div>
 </div>
