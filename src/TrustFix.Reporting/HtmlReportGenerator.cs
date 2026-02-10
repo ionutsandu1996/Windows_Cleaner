@@ -49,12 +49,44 @@ public static class HtmlReportGenerator
             };
         }
 
+        // Heuristic v1: estimate how many "Performance points" the user could gain if they fix issues.
+        static int ImprovementPointsFor(string findingId, string severityLower)
+        {
+            var basePts = findingId switch
+            {
+                "storage.low_free_space" => 20,
+                "startup.too_many_apps" => 10,
+                "memory.high_usage" => 15,
+                _ => 3
+            };
+
+            // Slight bonus for critical issues (they tend to hurt more).
+            if (severityLower == "critical") basePts += 5;
+
+            return basePts;
+        }
+
+        // --- Overall = worst of the three scores
         var worstScore = Math.Min(
             report.Scores.Performance,
             Math.Min(report.Scores.Stability, report.Scores.Security)
         );
-
         var overallClass = ScoreClass(worstScore);
+
+        // --- Estimated improvement (performance)
+        var improvement = 0;
+        var seenIds = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        foreach (var f in report.Findings ?? [])
+        {
+            // If you ever generate duplicate IDs, we don't want to inflate the estimate.
+            if (!seenIds.Add(f.Id)) continue;
+
+            var sevLower = f.Severity.ToString().ToLowerInvariant();
+            improvement += ImprovementPointsFor(f.Id, sevLower);
+        }
+        improvement = Math.Min(improvement, 35); // cap to keep it believable for MVP
+
+        var estimatedPerfAfter = Math.Min(100, report.Scores.Performance + improvement);
 
         var sb = new StringBuilder();
 
@@ -134,6 +166,51 @@ h3 {{ margin:0 0 6px 0; }}
   font-weight:800;
 }}
 
+.kpi-row {{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:10px;
+}}
+
+.kpi {{
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 12px;
+  padding: 12px 14px;
+  min-width: 220px;
+}}
+
+.kpi .kpi-label {{
+  color:#666;
+  font-size:13px;
+}}
+
+.kpi .kpi-value {{
+  margin-top:6px;
+  font-weight:900;
+  font-size:18px;
+}}
+
+.kpi .kpi-sub {{
+  margin-top:4px;
+  color:#666;
+  font-size:12px;
+}}
+
+.pill {{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:900;
+  font-size:12px;
+  background:#eee;
+}}
+
+.pill.good {{ background:#dff3e6; }}
+.pill.ok   {{ background:#fff2c2; }}
+.pill.bad  {{ background:#ffd6d6; }}
+
 .scores {{
   display:flex;
   gap:16px;
@@ -152,7 +229,7 @@ h3 {{ margin:0 0 6px 0; }}
 
 .score {{
   font-size:30px;
-  font-weight:800;
+  font-weight:900;
 }}
 
 .label {{ color:#666; font-size:14px; }}
@@ -171,7 +248,7 @@ h3 {{ margin:0 0 6px 0; }}
   padding:4px 10px;
   border-radius:999px;
   font-size:12px;
-  font-weight:800;
+  font-weight:900;
 }}
 
 .impact-high   {{ background:#ffd6d6; }}
@@ -199,9 +276,24 @@ h3 {{ margin:0 0 6px 0; }}
 </div>
 
 <div class=""card overall {overallClass}"">
+  <div class=""pill {overallClass}"">Overall</div>
   <div class=""overall-title"">{H(OverallTitle(overallClass))}</div>
   <p>{H(OverallSubtitle(overallClass))}</p>
   <div class=""meta"">Worst score: <b>{worstScore}/100</b></div>
+
+  <div class=""kpi-row"">
+    <div class=""kpi"">
+      <div class=""kpi-label"">Estimated improvement (Performance)</div>
+      <div class=""kpi-value"">+{improvement} points</div>
+      <div class=""kpi-sub"">Estimated Performance after fixes: <b>{estimatedPerfAfter}/100</b></div>
+    </div>
+
+    <div class=""kpi"">
+      <div class=""kpi-label"">Issues detected</div>
+      <div class=""kpi-value"">{(report.Findings?.Count ?? 0)}</div>
+      <div class=""kpi-sub"">Focus on critical/high-impact items first.</div>
+    </div>
+  </div>
 </div>
 
 <div class=""card"">
@@ -224,6 +316,7 @@ h3 {{ margin:0 0 6px 0; }}
 
 <div class=""card"" id=""recommended-actions"">
 <h2>Recommended actions</h2>
+<p class=""meta"">Estimated improvement if you apply the recommendations: <b>+{improvement} Performance</b> (to approx. <b>{estimatedPerfAfter}/100</b>).</p>
 <ol>
 ");
 

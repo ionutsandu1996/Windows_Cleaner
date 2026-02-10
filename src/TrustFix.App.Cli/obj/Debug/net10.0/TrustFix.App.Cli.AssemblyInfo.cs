@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrustFix.App.Cli")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b09819dcf5a5ca353db5936c687da5a3feac9753")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fadde437dc4f1c648ff4e9dc438501e7becd2d4f")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrustFix.App.Cli")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrustFix.App.Cli")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
